@@ -3,7 +3,7 @@ provider "google" {}
 module "google_folders" {
   source = "../../modules/folders"
 
-  parent = "organizations/123456789123"
+  parent = "folders/846906039283"
 
   folders = [
     {
