@@ -9,7 +9,7 @@
 module "google_organization" {
   source = "github.com/PCDEV-Cloud/terraform-google-organization"
 
-  organization = "organizations/174829227356"
+  organization = "<ORGANIZATION-ID-HERE>"
 
   folders = [
     {
