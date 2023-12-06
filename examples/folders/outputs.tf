@@ -1,3 +1,3 @@
 output "folders" {
-  value = module.folders.folders
+  value = module.google_folders.folders
 }

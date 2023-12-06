@@ -1,6 +1,6 @@
 provider "google" {}
 
-module "folders" {
+module "google_folders" {
   source = "../../modules/folders"
 
   parent = "organizations/123456789123"
