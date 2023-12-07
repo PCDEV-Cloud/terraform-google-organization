@@ -2,7 +2,10 @@ variable "parent" {
   type        = string
   description = "The parent's ID, including 'organizations/' or 'folders/' prefix, where folders to be created."
 
-  # TODO: validate: must starts with 'organizations/' or 'folders/'
+  validation {
+    condition     = startswith(var.parent, "organizations/") || startswith(var.parent, "folders/")
+    error_message = "The parent must starts with 'organizations/' or 'folders/'."
+  }
 }
 
 variable "folders" {
