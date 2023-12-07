@@ -1,5 +1,10 @@
 provider "google" {}
 
+data "google_billing_account" "acct" {
+  display_name = "My Billing Account"
+  open         = true
+}
+
 module "organization" {
   source = "../../"
 
@@ -21,5 +26,22 @@ module "organization" {
       ]
     },
     { display_name = "Projects" }
+  ]
+
+  projects = [
+    {
+      name                 = "SecurityToolingProd"
+      project_id           = "security-tooling-prod"
+      parent               = "/Security/Prod"
+      billing_account      = data.google_billing_account.acct.id
+      randomize_project_id = true
+    },
+    {
+      name                 = "LogArchiveProd"
+      project_id           = "log-archive-prod"
+      parent               = "/Security/Prod"
+      billing_account      = data.google_billing_account.acct.id
+      randomize_project_id = true
+    }
   ]
 }
