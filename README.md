@@ -35,3 +35,4 @@ module "google_organization" {
 
 - [complete](https://github.com/PCDEV-Cloud/terraform-google-organization/tree/main/examples/complete) - Creates a set of folders and projects
 - [folders](https://github.com/PCDEV-Cloud/terraform-google-organization/tree/main/examples/folders) - Creates folders
+- [project](https://github.com/PCDEV-Cloud/terraform-google-organization/tree/main/examples/project) - Creates project
