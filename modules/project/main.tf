@@ -26,7 +26,7 @@ resource "google_project" "this" {
 }
 
 resource "google_project_service" "this" {
-  for_each = toset(var.apis_and_services)
+  for_each = var.enable_apis_and_services ? toset(var.apis_and_services) : toset([])
 
   project                    = google_project.this.id
   service                    = each.value
