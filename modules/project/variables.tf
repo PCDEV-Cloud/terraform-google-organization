@@ -65,7 +65,8 @@ variable "enable_apis_and_services" {
 }
 
 variable "apis_and_services" {
-  type = list(string)
+  type     = list(string)
+  nullable = false
   default = [
     "bigquery.googleapis.com",
     "bigquerymigration.googleapis.com",
