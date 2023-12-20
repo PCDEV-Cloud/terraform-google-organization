@@ -57,3 +57,31 @@ variable "create_default_network" {
   default     = true
   description = "Controls whether the 'default' network exists on the project. If false, the default network will still be created by GCP but will be deleted immediately by Terraform."
 }
+
+variable "enable_apis_and_services" {
+  type        = bool
+  default     = false
+  description = "Wheter to enable services in the project."
+}
+
+variable "apis_and_services" {
+  type     = list(string)
+  nullable = false
+  default = [
+    "bigquery.googleapis.com",
+    "bigquerymigration.googleapis.com",
+    "bigquerystorage.googleapis.com",
+    "datastore.googleapis.com",
+    "logging.googleapis.com",
+    "monitoring.googleapis.com",
+    "sql-component.googleapis.com",
+    "storage-component.googleapis.com",
+    "storage.googleapis.com",
+    "cloudtrace.googleapis.com",
+    "cloudapis.googleapis.com",
+    "storage-api.googleapis.com",
+    "servicemanagement.googleapis.com",
+    "serviceusage.googleapis.com"
+  ]
+  description = "A list of services to enable in the project."
+}

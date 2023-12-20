@@ -30,11 +30,12 @@ module "organization" {
 
   projects = [
     {
-      name                 = "SecurityToolingProd"
-      project_id           = "security-tooling-prod"
-      parent               = "/Security/Prod"
-      billing_account      = data.google_billing_account.acct.id
-      randomize_project_id = true
+      name                     = "SecurityToolingProd"
+      project_id               = "security-tooling-prod"
+      parent                   = "/Security/Prod"
+      billing_account          = data.google_billing_account.acct.id
+      randomize_project_id     = true
+      enable_apis_and_services = true
     },
     {
       name                 = "LogArchiveProd"

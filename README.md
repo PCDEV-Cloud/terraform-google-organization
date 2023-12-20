@@ -2,6 +2,7 @@
 
 ## Requirements
 1. Google organization must be created.
+2. IAM Service Account Credentials API must be enabled.
 
 ## Usage
 
