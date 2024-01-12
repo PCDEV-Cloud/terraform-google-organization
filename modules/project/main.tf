@@ -14,7 +14,7 @@ resource "random_string" "project_id" {
 
 resource "google_project" "this" {
   name       = var.name
-  project_id = var.randomize_project_id ? join("-", [random_string.project_id[0].keepers.project_id, random_string.project_id[0].id]) : var.project_id
+  project_id = var.randomize_project_id ? join("-", [substr(random_string.project_id[0].keepers.project_id, 0, 23), random_string.project_id[0].id]) : var.project_id
 
   org_id    = startswith(var.parent, "organizations/") ? trimprefix(var.parent, "organizations/") : null
   folder_id = startswith(var.parent, "folders/") ? var.parent : null
